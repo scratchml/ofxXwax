@@ -1,0 +1,34 @@
+<record>
+  <!--
+    format can be: serato_2a, serato_2b, serato_cd, traktor_a,
+    traktor_b, mixvibes_v2, mixvibes_7inch
+  -->
+  <format>serato_cd</format>
+  <side>right</side> <!-- changes the OSC message address -->
+</record>
+
+<osc>
+  <host>localhost</host>
+  <port>8319</port>
+  <subdivide>8</subdivide> <!-- send every Nth message from the vinyl -->
+  <relative>0</relative> <!-- use relative instead of absolute position -->
+  <pitch>0</pitch> <!-- send pitch data -->
+  <degrees>0</degrees> <!-- send orientation in degrees -->
+</osc>
+
+<!-- the samplerate/buffersize should match your audio settings -->
+<audio>
+  <samplerate>96000</samplerate>
+  <buffersize>128</buffersize>
+</audio>
+
+<serial>
+  <!-- the arduino should report a stream of bytes on this port -->
+  <port>tty.usbmodemfd121</port>
+  <!--
+    when the serial data passes this threshold in either direction,
+    a 0 or 1 is sent over OSC. in the future, this should be double-ended
+    so that it sends 0, .5, or 1.
+  -->
+  <threshold>240</threshold>
+</serial>
