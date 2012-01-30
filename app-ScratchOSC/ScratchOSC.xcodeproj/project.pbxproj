@@ -1,0 +1,983 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27A9E3D814D3A89E00A2837A /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27A9E3D114D3A89D00A2837A /* tinyxml.cpp */; };
+		27A9E3D914D3A89E00A2837A /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27A9E3D314D3A89D00A2837A /* tinyxmlerror.cpp */; };
+		27A9E3DA14D3A89E00A2837A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27A9E3D414D3A89D00A2837A /* tinyxmlparser.cpp */; };
+		27A9E3DB14D3A89E00A2837A /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27A9E3D614D3A89D00A2837A /* ofxXmlSettings.cpp */; };
+		27B1AAD214D5E7120018F593 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27B1AACF14D5E7120018F593 /* main.cpp */; };
+		27B1AAD314D5E7120018F593 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27B1AAD014D5E7120018F593 /* ofApp.cpp */; };
+		27F2745F14D65D2500C0FEBB /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2744514D65D2500C0FEBB /* liboscpack.a */; };
+		27F2746014D65D2500C0FEBB /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2744614D65D2500C0FEBB /* liboscpack.a */; };
+		27F2746114D65D2500C0FEBB /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2744814D65D2500C0FEBB /* osc.a */; };
+		27F2746214D65D2500C0FEBB /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2744A14D65D2500C0FEBB /* liboscpack.a */; };
+		27F2746314D65D2500C0FEBB /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2744C14D65D2500C0FEBB /* liboscpack.a */; };
+		27F2746414D65D2500C0FEBB /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2744E14D65D2500C0FEBB /* osc.a */; };
+		27F2746514D65D2500C0FEBB /* oscpack.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2745014D65D2500C0FEBB /* oscpack.lib */; };
+		27F2746614D65D2500C0FEBB /* oscpackd.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2745114D65D2500C0FEBB /* oscpackd.lib */; };
+		27F2746714D65D2500C0FEBB /* oscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2745314D65D2500C0FEBB /* oscpack.a */; };
+		27F2746814D65D2500C0FEBB /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F2745714D65D2500C0FEBB /* ofxOscBundle.cpp */; };
+		27F2746914D65D2500C0FEBB /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F2745914D65D2500C0FEBB /* ofxOscMessage.cpp */; };
+		27F2746A14D65D2500C0FEBB /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F2745B14D65D2500C0FEBB /* ofxOscReceiver.cpp */; };
+		27F2746B14D65D2500C0FEBB /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F2745D14D65D2500C0FEBB /* ofxOscSender.cpp */; };
+		27F39BAE14D46C7500FC4113 /* lut.c in Sources */ = {isa = PBXBuildFile; fileRef = 27F39BA714D46C7500FC4113 /* lut.c */; };
+		27F39BAF14D46C7500FC4113 /* lut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F39BA814D46C7500FC4113 /* lut.cpp */; };
+		27F39BB014D46C7500FC4113 /* timecoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 27F39BAC14D46C7500FC4113 /* timecoder.c */; };
+		27F39BBC14D46DF300FC4113 /* ofxXwax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F39BBA14D46DF300FC4113 /* ofxXwax.cpp */; };
+		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		E4328149138ABC9F0047C5CB /* openFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworks.a */; };
+		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
+		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
+		E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */; };
+		E45BE97E0E8CC7DD009D7055 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9740E8CC7DD009D7055 /* Carbon.framework */; };
+		E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9750E8CC7DD009D7055 /* CoreAudio.framework */; };
+		E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */; };
+		E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9770E8CC7DD009D7055 /* CoreServices.framework */; };
+		E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9790E8CC7DD009D7055 /* OpenGL.framework */; };
+		E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */; };
+		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
+		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
+		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
+		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		27A9E3D114D3A89D00A2837A /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
+		27A9E3D214D3A89D00A2837A /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
+		27A9E3D314D3A89D00A2837A /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
+		27A9E3D414D3A89D00A2837A /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
+		27A9E3D614D3A89D00A2837A /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
+		27A9E3D714D3A89D00A2837A /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxXmlSettings.h; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.h; sourceTree = SOURCE_ROOT; };
+		27B1AACF14D5E7120018F593 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		27B1AAD014D5E7120018F593 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
+		27B1AAD114D5E7120018F593 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		27F2742F14D65D2500C0FEBB /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = install.xml; path = ../../ofxOsc/install.xml; sourceTree = SOURCE_ROOT; };
+		27F2743414D65D2500C0FEBB /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IpEndpointName.h; path = ../../ofxOsc/libs/oscpack/include/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
+		27F2743514D65D2500C0FEBB /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkingUtils.h; path = ../../ofxOsc/libs/oscpack/include/ip/NetworkingUtils.h; sourceTree = SOURCE_ROOT; };
+		27F2743614D65D2500C0FEBB /* PacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PacketListener.h; path = ../../ofxOsc/libs/oscpack/include/ip/PacketListener.h; sourceTree = SOURCE_ROOT; };
+		27F2743714D65D2500C0FEBB /* TimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimerListener.h; path = ../../ofxOsc/libs/oscpack/include/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
+		27F2743814D65D2500C0FEBB /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UdpSocket.h; path = ../../ofxOsc/libs/oscpack/include/ip/UdpSocket.h; sourceTree = SOURCE_ROOT; };
+		27F2743A14D65D2500C0FEBB /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageMappingOscPacketListener.h; path = ../../ofxOsc/libs/oscpack/include/osc/MessageMappingOscPacketListener.h; sourceTree = SOURCE_ROOT; };
+		27F2743B14D65D2500C0FEBB /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscException.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscException.h; sourceTree = SOURCE_ROOT; };
+		27F2743C14D65D2500C0FEBB /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscHostEndianness.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscHostEndianness.h; sourceTree = SOURCE_ROOT; };
+		27F2743D14D65D2500C0FEBB /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscOutboundPacketStream.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
+		27F2743E14D65D2500C0FEBB /* OscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscPacketListener.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscPacketListener.h; sourceTree = SOURCE_ROOT; };
+		27F2743F14D65D2500C0FEBB /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscPrintReceivedElements.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
+		27F2744014D65D2500C0FEBB /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscReceivedElements.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscReceivedElements.h; sourceTree = SOURCE_ROOT; };
+		27F2744114D65D2500C0FEBB /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscTypes.h; path = ../../ofxOsc/libs/oscpack/include/osc/OscTypes.h; sourceTree = SOURCE_ROOT; };
+		27F2744514D65D2500C0FEBB /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liboscpack.a; path = ../../ofxOsc/libs/oscpack/lib/android/arm7/liboscpack.a; sourceTree = SOURCE_ROOT; };
+		27F2744614D65D2500C0FEBB /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liboscpack.a; path = ../../ofxOsc/libs/oscpack/lib/android/liboscpack.a; sourceTree = SOURCE_ROOT; };
+		27F2744814D65D2500C0FEBB /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = osc.a; path = ../../ofxOsc/libs/oscpack/lib/iphone/osc.a; sourceTree = SOURCE_ROOT; };
+		27F2744A14D65D2500C0FEBB /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liboscpack.a; path = ../../ofxOsc/libs/oscpack/lib/linux/liboscpack.a; sourceTree = SOURCE_ROOT; };
+		27F2744C14D65D2500C0FEBB /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liboscpack.a; path = ../../ofxOsc/libs/oscpack/lib/linux64/liboscpack.a; sourceTree = SOURCE_ROOT; };
+		27F2744E14D65D2500C0FEBB /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = osc.a; path = ../../ofxOsc/libs/oscpack/lib/osx/osc.a; sourceTree = SOURCE_ROOT; };
+		27F2745014D65D2500C0FEBB /* oscpack.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = oscpack.lib; path = ../../ofxOsc/libs/oscpack/lib/vs2010/oscpack.lib; sourceTree = SOURCE_ROOT; };
+		27F2745114D65D2500C0FEBB /* oscpackd.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = oscpackd.lib; path = ../../ofxOsc/libs/oscpack/lib/vs2010/oscpackd.lib; sourceTree = SOURCE_ROOT; };
+		27F2745314D65D2500C0FEBB /* oscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = oscpack.a; path = ../../ofxOsc/libs/oscpack/lib/win_cb/oscpack.a; sourceTree = SOURCE_ROOT; };
+		27F2745514D65D2500C0FEBB /* ofxOsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOsc.h; path = ../../ofxOsc/src/ofxOsc.h; sourceTree = SOURCE_ROOT; };
+		27F2745614D65D2500C0FEBB /* ofxOscArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscArg.h; path = ../../ofxOsc/src/ofxOscArg.h; sourceTree = SOURCE_ROOT; };
+		27F2745714D65D2500C0FEBB /* ofxOscBundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxOscBundle.cpp; path = ../../ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
+		27F2745814D65D2500C0FEBB /* ofxOscBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscBundle.h; path = ../../ofxOsc/src/ofxOscBundle.h; sourceTree = SOURCE_ROOT; };
+		27F2745914D65D2500C0FEBB /* ofxOscMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxOscMessage.cpp; path = ../../ofxOsc/src/ofxOscMessage.cpp; sourceTree = SOURCE_ROOT; };
+		27F2745A14D65D2500C0FEBB /* ofxOscMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscMessage.h; path = ../../ofxOsc/src/ofxOscMessage.h; sourceTree = SOURCE_ROOT; };
+		27F2745B14D65D2500C0FEBB /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxOscReceiver.cpp; path = ../../ofxOsc/src/ofxOscReceiver.cpp; sourceTree = SOURCE_ROOT; };
+		27F2745C14D65D2500C0FEBB /* ofxOscReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscReceiver.h; path = ../../ofxOsc/src/ofxOscReceiver.h; sourceTree = SOURCE_ROOT; };
+		27F2745D14D65D2500C0FEBB /* ofxOscSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxOscSender.cpp; path = ../../ofxOsc/src/ofxOscSender.cpp; sourceTree = SOURCE_ROOT; };
+		27F2745E14D65D2500C0FEBB /* ofxOscSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxOscSender.h; path = ../../ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
+		27F39BA714D46C7500FC4113 /* lut.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lut.c; path = ../libs/xwax/lut.c; sourceTree = SOURCE_ROOT; };
+		27F39BA814D46C7500FC4113 /* lut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lut.cpp; path = ../libs/xwax/lut.cpp; sourceTree = SOURCE_ROOT; };
+		27F39BA914D46C7500FC4113 /* lut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lut.h; path = ../libs/xwax/lut.h; sourceTree = SOURCE_ROOT; };
+		27F39BAA14D46C7500FC4113 /* pitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pitch.h; path = ../libs/xwax/pitch.h; sourceTree = SOURCE_ROOT; };
+		27F39BAB14D46C7500FC4113 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../libs/xwax/README; sourceTree = SOURCE_ROOT; };
+		27F39BAC14D46C7500FC4113 /* timecoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timecoder.c; path = ../libs/xwax/timecoder.c; sourceTree = SOURCE_ROOT; };
+		27F39BAD14D46C7500FC4113 /* timecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timecoder.h; path = ../libs/xwax/timecoder.h; sourceTree = SOURCE_ROOT; };
+		27F39BBA14D46DF300FC4113 /* ofxXwax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxXwax.cpp; path = ../src/ofxXwax.cpp; sourceTree = SOURCE_ROOT; };
+		27F39BBB14D46DF300FC4113 /* ofxXwax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxXwax.h; path = ../src/ofxXwax.h; sourceTree = SOURCE_ROOT; };
+		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		E45BE9740E8CC7DD009D7055 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		E45BE9750E8CC7DD009D7055 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
+		E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		E4B69B5B0A3A1756003C02F2 /* ScratchOSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScratchOSC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
+		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
+				E4328149138ABC9F0047C5CB /* openFrameworks.a in Frameworks */,
+				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
+				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
+				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
+				E45BE97E0E8CC7DD009D7055 /* Carbon.framework in Frameworks */,
+				E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */,
+				E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */,
+				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
+				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
+				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
+				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
+				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
+				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
+				27F2745F14D65D2500C0FEBB /* liboscpack.a in Frameworks */,
+				27F2746014D65D2500C0FEBB /* liboscpack.a in Frameworks */,
+				27F2746114D65D2500C0FEBB /* osc.a in Frameworks */,
+				27F2746214D65D2500C0FEBB /* liboscpack.a in Frameworks */,
+				27F2746314D65D2500C0FEBB /* liboscpack.a in Frameworks */,
+				27F2746414D65D2500C0FEBB /* osc.a in Frameworks */,
+				27F2746514D65D2500C0FEBB /* oscpack.lib in Frameworks */,
+				27F2746614D65D2500C0FEBB /* oscpackd.lib in Frameworks */,
+				27F2746714D65D2500C0FEBB /* oscpack.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27A9E3CE14D3A89D00A2837A /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				27A9E3D014D3A89D00A2837A /* libs */,
+				27A9E3D514D3A89D00A2837A /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../../../addons/ofxXmlSettings;
+			sourceTree = SOURCE_ROOT;
+		};
+		27A9E3D014D3A89D00A2837A /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				27A9E3D114D3A89D00A2837A /* tinyxml.cpp */,
+				27A9E3D214D3A89D00A2837A /* tinyxml.h */,
+				27A9E3D314D3A89D00A2837A /* tinyxmlerror.cpp */,
+				27A9E3D414D3A89D00A2837A /* tinyxmlparser.cpp */,
+			);
+			name = libs;
+			path = ../../../addons/ofxXmlSettings/libs;
+			sourceTree = SOURCE_ROOT;
+		};
+		27A9E3D514D3A89D00A2837A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				27A9E3D614D3A89D00A2837A /* ofxXmlSettings.cpp */,
+				27A9E3D714D3A89D00A2837A /* ofxXmlSettings.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxXmlSettings/src;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2742E14D65D2500C0FEBB /* ofxOsc */ = {
+			isa = PBXGroup;
+			children = (
+				27F2742F14D65D2500C0FEBB /* install.xml */,
+				27F2743014D65D2500C0FEBB /* libs */,
+				27F2745414D65D2500C0FEBB /* src */,
+			);
+			name = ofxOsc;
+			path = ../../ofxOsc;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2743014D65D2500C0FEBB /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				27F2743114D65D2500C0FEBB /* oscpack */,
+			);
+			name = libs;
+			path = ../../ofxOsc/libs;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2743114D65D2500C0FEBB /* oscpack */ = {
+			isa = PBXGroup;
+			children = (
+				27F2743214D65D2500C0FEBB /* include */,
+				27F2744214D65D2500C0FEBB /* lib */,
+			);
+			name = oscpack;
+			path = ../../ofxOsc/libs/oscpack;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2743214D65D2500C0FEBB /* include */ = {
+			isa = PBXGroup;
+			children = (
+				27F2743314D65D2500C0FEBB /* ip */,
+				27F2743914D65D2500C0FEBB /* osc */,
+			);
+			name = include;
+			path = ../../ofxOsc/libs/oscpack/include;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2743314D65D2500C0FEBB /* ip */ = {
+			isa = PBXGroup;
+			children = (
+				27F2743414D65D2500C0FEBB /* IpEndpointName.h */,
+				27F2743514D65D2500C0FEBB /* NetworkingUtils.h */,
+				27F2743614D65D2500C0FEBB /* PacketListener.h */,
+				27F2743714D65D2500C0FEBB /* TimerListener.h */,
+				27F2743814D65D2500C0FEBB /* UdpSocket.h */,
+			);
+			name = ip;
+			path = ../../ofxOsc/libs/oscpack/include/ip;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2743914D65D2500C0FEBB /* osc */ = {
+			isa = PBXGroup;
+			children = (
+				27F2743A14D65D2500C0FEBB /* MessageMappingOscPacketListener.h */,
+				27F2743B14D65D2500C0FEBB /* OscException.h */,
+				27F2743C14D65D2500C0FEBB /* OscHostEndianness.h */,
+				27F2743D14D65D2500C0FEBB /* OscOutboundPacketStream.h */,
+				27F2743E14D65D2500C0FEBB /* OscPacketListener.h */,
+				27F2743F14D65D2500C0FEBB /* OscPrintReceivedElements.h */,
+				27F2744014D65D2500C0FEBB /* OscReceivedElements.h */,
+				27F2744114D65D2500C0FEBB /* OscTypes.h */,
+			);
+			name = osc;
+			path = ../../ofxOsc/libs/oscpack/include/osc;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744214D65D2500C0FEBB /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744314D65D2500C0FEBB /* android */,
+				27F2744714D65D2500C0FEBB /* iphone */,
+				27F2744914D65D2500C0FEBB /* linux */,
+				27F2744B14D65D2500C0FEBB /* linux64 */,
+				27F2744D14D65D2500C0FEBB /* osx */,
+				27F2744F14D65D2500C0FEBB /* vs2010 */,
+				27F2745214D65D2500C0FEBB /* win_cb */,
+			);
+			name = lib;
+			path = ../../ofxOsc/libs/oscpack/lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744314D65D2500C0FEBB /* android */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744414D65D2500C0FEBB /* arm7 */,
+				27F2744614D65D2500C0FEBB /* liboscpack.a */,
+			);
+			name = android;
+			path = ../../ofxOsc/libs/oscpack/lib/android;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744414D65D2500C0FEBB /* arm7 */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744514D65D2500C0FEBB /* liboscpack.a */,
+			);
+			name = arm7;
+			path = ../../ofxOsc/libs/oscpack/lib/android/arm7;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744714D65D2500C0FEBB /* iphone */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744814D65D2500C0FEBB /* osc.a */,
+			);
+			name = iphone;
+			path = ../../ofxOsc/libs/oscpack/lib/iphone;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744914D65D2500C0FEBB /* linux */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744A14D65D2500C0FEBB /* liboscpack.a */,
+			);
+			name = linux;
+			path = ../../ofxOsc/libs/oscpack/lib/linux;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744B14D65D2500C0FEBB /* linux64 */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744C14D65D2500C0FEBB /* liboscpack.a */,
+			);
+			name = linux64;
+			path = ../../ofxOsc/libs/oscpack/lib/linux64;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744D14D65D2500C0FEBB /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				27F2744E14D65D2500C0FEBB /* osc.a */,
+			);
+			name = osx;
+			path = ../../ofxOsc/libs/oscpack/lib/osx;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2744F14D65D2500C0FEBB /* vs2010 */ = {
+			isa = PBXGroup;
+			children = (
+				27F2745014D65D2500C0FEBB /* oscpack.lib */,
+				27F2745114D65D2500C0FEBB /* oscpackd.lib */,
+			);
+			name = vs2010;
+			path = ../../ofxOsc/libs/oscpack/lib/vs2010;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2745214D65D2500C0FEBB /* win_cb */ = {
+			isa = PBXGroup;
+			children = (
+				27F2745314D65D2500C0FEBB /* oscpack.a */,
+			);
+			name = win_cb;
+			path = ../../ofxOsc/libs/oscpack/lib/win_cb;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F2745414D65D2500C0FEBB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				27F2745514D65D2500C0FEBB /* ofxOsc.h */,
+				27F2745614D65D2500C0FEBB /* ofxOscArg.h */,
+				27F2745714D65D2500C0FEBB /* ofxOscBundle.cpp */,
+				27F2745814D65D2500C0FEBB /* ofxOscBundle.h */,
+				27F2745914D65D2500C0FEBB /* ofxOscMessage.cpp */,
+				27F2745A14D65D2500C0FEBB /* ofxOscMessage.h */,
+				27F2745B14D65D2500C0FEBB /* ofxOscReceiver.cpp */,
+				27F2745C14D65D2500C0FEBB /* ofxOscReceiver.h */,
+				27F2745D14D65D2500C0FEBB /* ofxOscSender.cpp */,
+				27F2745E14D65D2500C0FEBB /* ofxOscSender.h */,
+			);
+			name = src;
+			path = ../../ofxOsc/src;
+			sourceTree = SOURCE_ROOT;
+		};
+		27F39B9D14D46C3F00FC4113 /* ofxXwax */ = {
+			isa = PBXGroup;
+			children = (
+				27F39BA414D46C5D00FC4113 /* src */,
+				27F39BA314D46C5800FC4113 /* libs */,
+			);
+			name = ofxXwax;
+			sourceTree = "<group>";
+		};
+		27F39BA314D46C5800FC4113 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				27F39BA614D46C7500FC4113 /* xwax */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		27F39BA414D46C5D00FC4113 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				27F39BBA14D46DF300FC4113 /* ofxXwax.cpp */,
+				27F39BBB14D46DF300FC4113 /* ofxXwax.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		27F39BA614D46C7500FC4113 /* xwax */ = {
+			isa = PBXGroup;
+			children = (
+				27F39BA714D46C7500FC4113 /* lut.c */,
+				27F39BA814D46C7500FC4113 /* lut.cpp */,
+				27F39BA914D46C7500FC4113 /* lut.h */,
+				27F39BAA14D46C7500FC4113 /* pitch.h */,
+				27F39BAB14D46C7500FC4113 /* README */,
+				27F39BAC14D46C7500FC4113 /* timecoder.c */,
+				27F39BAD14D46C7500FC4113 /* timecoder.h */,
+			);
+			name = xwax;
+			path = ../libs/xwax;
+			sourceTree = SOURCE_ROOT;
+		};
+		BB4B014C10F69532006C3DED /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				27F2742E14D65D2500C0FEBB /* ofxOsc */,
+				27F39B9D14D46C3F00FC4113 /* ofxXwax */,
+				27A9E3CE14D3A89D00A2837A /* ofxXmlSettings */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4C2424410CC5A17004149E2 /* AppKit.framework */,
+				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
+				E4C2424610CC5A17004149E2 /* IOKit.framework */,
+				E45BE9710E8CC7DD009D7055 /* AGL.framework */,
+				E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */,
+				E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */,
+				E45BE9740E8CC7DD009D7055 /* Carbon.framework */,
+				E45BE9750E8CC7DD009D7055 /* CoreAudio.framework */,
+				E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */,
+				E45BE9770E8CC7DD009D7055 /* CoreServices.framework */,
+				E45BE9790E8CC7DD009D7055 /* OpenGL.framework */,
+				E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */,
+			);
+			name = "system frameworks";
+			sourceTree = "<group>";
+		};
+		BBAB23CA13894EDB00AA2426 /* 3rd party frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB23BE13894E4700AA2426 /* GLUT.framework */,
+			);
+			name = "3rd party frameworks";
+			sourceTree = "<group>";
+		};
+		E4328144138ABC890047C5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4328148138ABC890047C5CB /* openFrameworks.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E45BE5980E8CC70C009D7055 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB23CA13894EDB00AA2426 /* 3rd party frameworks */,
+				BBAB23C913894ECA00AA2426 /* system frameworks */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		E4B69B4A0A3A1720003C02F2 = {
+			isa = PBXGroup;
+			children = (
+				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				BB4B014C10F69532006C3DED /* addons */,
+				E45BE5980E8CC70C009D7055 /* frameworks */,
+				E4B69B5B0A3A1756003C02F2 /* ScratchOSC.app */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				27B1AACF14D5E7120018F593 /* main.cpp */,
+				27B1AAD014D5E7120018F593 /* ofApp.cpp */,
+				27B1AAD114D5E7120018F593 /* ofApp.h */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4EEC9E9138DF44700A80321 /* openFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */,
+				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
+				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+			);
+			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B69B5A0A3A1756003C02F2 /* ScratchOSC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ScratchOSC" */;
+			buildPhases = (
+				E4B69B580A3A1756003C02F2 /* Sources */,
+				E4B69B590A3A1756003C02F2 /* Frameworks */,
+				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
+				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+			);
+			name = ScratchOSC;
+			productName = myOFApp;
+			productReference = E4B69B5B0A3A1756003C02F2 /* ScratchOSC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ScratchOSC" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = E4B69B4A0A3A1720003C02F2;
+			productRefGroup = E4B69B4A0A3A1720003C02F2;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4328144138ABC890047C5CB /* Products */;
+					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E4B69B5A0A3A1756003C02F2 /* ScratchOSC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4328148138ABC890047C5CB /* openFrameworks.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworks.a;
+			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B69B580A3A1756003C02F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27A9E3D814D3A89E00A2837A /* tinyxml.cpp in Sources */,
+				27A9E3D914D3A89E00A2837A /* tinyxmlerror.cpp in Sources */,
+				27A9E3DA14D3A89E00A2837A /* tinyxmlparser.cpp in Sources */,
+				27A9E3DB14D3A89E00A2837A /* ofxXmlSettings.cpp in Sources */,
+				27F39BAE14D46C7500FC4113 /* lut.c in Sources */,
+				27F39BAF14D46C7500FC4113 /* lut.cpp in Sources */,
+				27F39BB014D46C7500FC4113 /* timecoder.c in Sources */,
+				27F39BBC14D46DF300FC4113 /* ofxXwax.cpp in Sources */,
+				27B1AAD214D5E7120018F593 /* main.cpp in Sources */,
+				27B1AAD314D5E7120018F593 /* ofApp.cpp in Sources */,
+				27F2746814D65D2500C0FEBB /* ofxOscBundle.cpp in Sources */,
+				27F2746914D65D2500C0FEBB /* ofxOscMessage.cpp in Sources */,
+				27F2746A14D65D2500C0FEBB /* ofxOscReceiver.cpp in Sources */,
+				27F2746B14D65D2500C0FEBB /* ofxOscSender.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+				);
+			};
+			name = Debug;
+		};
+		E4B69B4F0A3A1720003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+				);
+			};
+			name = Release;
+		};
+		E4B69B600A3A1757003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_25)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_26)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_27)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_28)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_29)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_30)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_31)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_32)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_33)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_34)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_35)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_36)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_37)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_38)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_39)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_40)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_41)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_42)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_43)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_44)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_45)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_46)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_47)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_48)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
+					/opt/local/lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/android/arm7\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/iphone\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/win_cb\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android/arm7\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/iphone\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/android\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/win_cb\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/iphone\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/win_cb\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android/arm7\"";
+				PREBINDING = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4B69B610A3A1757003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_25)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_26)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_27)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_28)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_29)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_30)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_31)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_32)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_33)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_34)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_35)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_36)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_37)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_38)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_39)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_40)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_41)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_42)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_43)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_44)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_45)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_46)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_47)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_48)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
+					/opt/local/lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/android/arm7\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/iphone\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/win_cb\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android/arm7\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/iphone\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/android\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/win_cb\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/iphone\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/win_cb\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../ofxOsc/libs/oscpack/lib/android/arm7\"";
+				PREBINDING = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ScratchOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B4E0A3A1720003C02F2 /* Debug */,
+				E4B69B4F0A3A1720003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ScratchOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B600A3A1757003C02F2 /* Debug */,
+				E4B69B610A3A1757003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+}
