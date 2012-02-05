@@ -249,8 +249,8 @@ void ofApp::audioIn(float* input, int audioBuffersize, int nChannels) {
 				osc.sendMessage(msg);
 			}
 			faderPosition.push_back(faderData);
-			if(relativePosition.size() > maxData) {
-				relativePosition.pop_front();
+			if(faderPosition.size() > maxData) {
+				faderPosition.pop_front();
 			}
 		}
 	}
