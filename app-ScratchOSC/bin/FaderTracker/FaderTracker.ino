@@ -1,5 +1,5 @@
 /*
- On the fader we tested (inside a Vestax PMC-05 Pro III) we found that the
+ On the fader we tested (inside a Vestax PMC-07 Pro) we found that the
  fader ran from 0V to +10V. One of the pins went from 0V to +10V as you
  moved left to right, and another pin went from +10V to 0V as you moved
  left to right. We soldered on to both of these pins, and halved their voltage
