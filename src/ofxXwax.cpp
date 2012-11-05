@@ -33,7 +33,7 @@ void ofxXwax::update(float* input) {
 		shortBuffer[i] = input[i] * (1<<15);
 	}
 	
-	timecoder_submit(&timecoder, &shortBuffer[0], bufferSize);
+	timecoder_submit(&timecoder, &shortBuffer[0], bufferSize*nChannels);
 	
 	float when;
 	float curPosition = timecoder_get_position(&timecoder, &when);
