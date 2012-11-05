@@ -24,7 +24,7 @@ void ofxXwax::setup(unsigned int sampleRate, unsigned int bufferSize, string for
     cout<<bufferSize<<endl;
 	float speed = 1.0; // 1.0 is 33 1/3, 1.35 is 45 rpm
     struct timecode_def *timecoderDef;
-    timecoderDef = timecoder_find_definition("serato_cd");
+    timecoderDef = timecoder_find_definition(format.c_str());
 	timecoder_init(&timecoder, timecoderDef, speed, sampleRate);
     //timecoder_init(&timecoder, <#struct timecode_def *def#>, speed, sampleRate);
 	
