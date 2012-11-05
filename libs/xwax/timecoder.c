@@ -143,14 +143,14 @@ static inline bits_t lfsr(bits_t code, bits_t taps)
 {
     bits_t taken;
     int xrs;
-
+    
     taken = code & taps;
     xrs = 0;
     while (taken != 0x0) {
         xrs += taken & 0x1;
         taken >>= 1;
     }
-
+    
     return xrs & 0x1;
 }
 
@@ -162,9 +162,9 @@ static inline bits_t lfsr(bits_t code, bits_t taps)
 static inline bits_t fwd(bits_t current, struct timecode_def *def)
 {
     bits_t l;
-
+    
     /* New bits are added at the MSB; shift right by one */
-
+    
     l = lfsr(current, def->taps | 0x1);
     return (current >> 1) | (l << (def->bits - 1));
 }
@@ -176,9 +176,9 @@ static inline bits_t fwd(bits_t current, struct timecode_def *def)
 static inline bits_t rev(bits_t current, struct timecode_def *def)
 {
     bits_t l, mask;
-
+    
     /* New bits are added at the LSB; shift left one and mask */
-
+    
     mask = (1 << def->bits) - 1;
     l = lfsr(current, (def->taps >> 1) | (0x1 << (def->bits - 1)));
     return ((current << 1) & mask) | l;
@@ -194,33 +194,33 @@ static int build_lookup(struct timecode_def *def)
 {
     unsigned int n;
     bits_t current, last;
-
+    
     if (def->lookup)
         return 0;
-
+    
     fprintf(stderr, "Building LUT for %d bit %dHz timecode (%s)\n",
             def->bits, def->resolution, def->desc);
-
+    
     if (lut_init(&def->lut, def->length) == -1)
-	return -1;
-
+        return -1;
+    
     current = def->seed;
-
+    
     for (n = 0; n < def->length; n++) {
         /* timecode must not wrap */
         if(lut_lookup(&def->lut, current) == (unsigned)-1){
             
-        lut_push(&def->lut, current);
-        last = current;
-        current = fwd(current, def);
+            lut_push(&def->lut, current);
+            last = current;
+            current = fwd(current, def);
             if(rev(current, def) == last){
-        
+                
             }
         }
     }
-
+    
     def->lookup = true;
-
+    
     return 0;
 }
 
@@ -233,23 +233,23 @@ static int build_lookup(struct timecode_def *def)
 struct timecode_def* timecoder_find_definition(const char *name)
 {
     struct timecode_def *def, *end;
-
+    
     def = &timecodes[0];
     end = def + ARRAY_SIZE(timecodes);
-
+    
     for (;;) {
         if (!strcmp(def->name, name))
             break;
-
+        
         def++;
-
+        
         if (def == end)
             return NULL;
     }
-
+    
     if (build_lookup(def) == -1)
         return NULL;
-
+    
     return def;
 }
 
@@ -259,10 +259,10 @@ struct timecode_def* timecoder_find_definition(const char *name)
 
 void timecoder_free_lookup(void) {
     struct timecode_def *def, *end;
-
+    
     def = &timecodes[0];
     end = def + ARRAY_SIZE(timecodes);
-
+    
     while (def < end) {
         if (def->lookup)
             lut_clear(&def->lut);
@@ -290,29 +290,29 @@ void timecoder_init(struct timecoder *tc, struct timecode_def *def,
                     double speed, unsigned int sample_rate)
 {
     if(def != NULL){
-
-    /* A definition contains a lookup table which can be shared
-     * across multiple timecoders */
-
+        
+        /* A definition contains a lookup table which can be shared
+         * across multiple timecoders */
+        
         if(def->lookup){
-    tc->def = def;
-    tc->speed = speed;
-
-    tc->dt = 1.0 / sample_rate;
-    tc->zero_alpha = tc->dt / (ZERO_RC + tc->dt);
-
-    tc->forwards = 1;
-    init_channel(&tc->primary);
-    init_channel(&tc->secondary);
-    pitch_init(&tc->pitch, tc->dt);
-
-    tc->ref_level = 32768.0;
-    tc->bitstream = 0;
-    tc->timecode = 0;
-    tc->valid_counter = 0;
-    tc->timecode_ticker = 0;
-
-    tc->mon = NULL;
+            tc->def = def;
+            tc->speed = speed;
+            
+            tc->dt = 1.0 / sample_rate;
+            tc->zero_alpha = tc->dt / (ZERO_RC + tc->dt);
+            
+            tc->forwards = 1;
+            init_channel(&tc->primary);
+            init_channel(&tc->secondary);
+            pitch_init(&tc->pitch, tc->dt);
+            
+            tc->ref_level = 32768.0;
+            tc->bitstream = 0;
+            tc->timecode = 0;
+            tc->valid_counter = 0;
+            tc->timecode_ticker = 0;
+            
+            tc->mon = NULL;
         }
     }
 }
@@ -323,9 +323,7 @@ void timecoder_init(struct timecoder *tc, struct timecode_def *def,
 
 void timecoder_clear(struct timecoder *tc)
 {
-    if(tc->mon == NULL){
-        
-    }
+    timecoder_monitor_clear(tc);
 }
 
 /*
@@ -340,14 +338,14 @@ void timecoder_clear(struct timecoder *tc)
 int timecoder_monitor_init(struct timecoder *tc, int size)
 {
     if(tc->mon == NULL){
-    tc->mon_size = size;
-    tc->mon = malloc(SQ(tc->mon_size));
-    if (tc->mon == NULL) {
-        perror("malloc");
-        return -1;
-    }
-    memset(tc->mon, 0, SQ(tc->mon_size));
-    tc->mon_counter = 0;
+        tc->mon_size = size;
+        tc->mon = malloc(SQ(tc->mon_size));
+        if (tc->mon == NULL) {
+            perror("malloc");
+            return -1;
+        }
+        memset(tc->mon, 0, SQ(tc->mon_size));
+        tc->mon_counter = 0;
     }
     return 0;
 }
@@ -359,8 +357,8 @@ int timecoder_monitor_init(struct timecoder *tc, int size)
 void timecoder_monitor_clear(struct timecoder *tc)
 {
     if(tc->mon != NULL){
-    free(tc->mon);
-    tc->mon = NULL;
+        free(tc->mon);
+        tc->mon = NULL;
     }
 }
 
@@ -372,7 +370,7 @@ static void detect_zero_crossing(struct timecoder_channel *ch,
                                  signed int v, double alpha)
 {
     ch->crossing_ticker++;
-
+    
     ch->swapped = false;
     if (v > ch->zero + ZERO_THRESHOLD && !ch->positive) {
         ch->swapped = true;
@@ -383,7 +381,7 @@ static void detect_zero_crossing(struct timecoder_channel *ch,
         ch->positive = false;
         ch->crossing_ticker = 0;
     }
-
+    
     ch->zero += alpha * (v - ch->zero);
 }
 
@@ -395,12 +393,12 @@ static void update_monitor(struct timecoder *tc, signed int x, signed int y)
 {
     int px, py, p;
     double v, w;
-
+    
     if (!tc->mon)
         return;
-
+    
     /* Decay the pixels already in the montior */
-
+    
     if (++tc->mon_counter % MONITOR_DECAY_EVERY == 0) {
         for (p = 0; p < SQ(tc->mon_size); p++) {
             if (tc->mon[p]){
@@ -408,15 +406,15 @@ static void update_monitor(struct timecoder *tc, signed int x, signed int y)
             }
         }
     }
-
+    
     v = (double)x / tc->ref_level / 2;
     w = (double)y / tc->ref_level / 2;
-
+    
     px = tc->mon_size / 2 + (v * tc->mon_size / 2);
     py = tc->mon_size / 2 + (w * tc->mon_size / 2);
-
+    
     /* Set the pixel value to white */
-
+    
     if (px > 0 && px < tc->mon_size && py > 0 && py < tc->mon_size)
         tc->mon[py * tc->mon_size + px] = 0xff;
 }
@@ -428,44 +426,44 @@ static void update_monitor(struct timecoder *tc, signed int x, signed int y)
 static void process_bitstream(struct timecoder *tc, signed int m)
 {
     bits_t b;
-
+    
     b = m > tc->ref_level;
-
+    
     /* Add it to the bitstream, and work out what we were expecting
      * (timecode). */
-
+    
     /* tc->bitstream is always in the order it is physically placed on
      * the vinyl, regardless of the direction. */
-
+    
     if (tc->forwards) {
-	tc->timecode = fwd(tc->timecode, tc->def);
-	tc->bitstream = (tc->bitstream >> 1)
+        tc->timecode = fwd(tc->timecode, tc->def);
+        tc->bitstream = (tc->bitstream >> 1)
 	    + (b << (tc->def->bits - 1));
-
+        
     } else {
-	bits_t mask;
-
-	mask = ((1 << tc->def->bits) - 1);
-	tc->timecode = rev(tc->timecode, tc->def);
-	tc->bitstream = ((tc->bitstream << 1) & mask) + b;
+        bits_t mask;
+        
+        mask = ((1 << tc->def->bits) - 1);
+        tc->timecode = rev(tc->timecode, tc->def);
+        tc->bitstream = ((tc->bitstream << 1) & mask) + b;
     }
-
+    
     if (tc->timecode == tc->bitstream)
-	tc->valid_counter++;
+        tc->valid_counter++;
     else {
-	tc->timecode = tc->bitstream;
-	tc->valid_counter = 0;
+        tc->timecode = tc->bitstream;
+        tc->valid_counter = 0;
     }
-
+    
     /* Take note of the last time we read a valid timecode */
-
+    
     tc->timecode_ticker = 0;
-
+    
     /* Adjust the reference level based on this new peak */
-
+    
     tc->ref_level = (tc->ref_level * (REF_PEAKS_AVG - 1) + m) / REF_PEAKS_AVG;
-
-
+    
+    
 }
 
 /*
@@ -473,59 +471,59 @@ static void process_bitstream(struct timecoder *tc, signed int m)
  */
 
 static void process_sample(struct timecoder *tc,
-			   signed int primary, signed int secondary)
+                           signed int primary, signed int secondary)
 {
     signed int m; /* pcm sample, sum of two shorts */
-
+    
     detect_zero_crossing(&tc->primary, primary, tc->zero_alpha);
     detect_zero_crossing(&tc->secondary, secondary, tc->zero_alpha);
-
+    
     m = abs(primary - tc->primary.zero);
-
+    
     /* If an axis has been crossed, use the direction of the crossing
      * to work out the direction of the vinyl */
-
+    
     if (tc->primary.swapped || tc->secondary.swapped) {
         bool forwards;
-
+        
         if (tc->primary.swapped) {
             forwards = (tc->primary.positive != tc->secondary.positive);
         } else {
             forwards = (tc->primary.positive == tc->secondary.positive);
         }
-
+        
         if (tc->def->flags & SWITCH_PHASE)
-	    forwards = !forwards;
-
+            forwards = !forwards;
+        
         if (forwards != tc->forwards) { /* direction has changed */
             tc->forwards = forwards;
             tc->valid_counter = 0;
         }
     }
-
+    
     /* If any axis has been crossed, register movement using the pitch
      * counters */
-
+    
     if (!tc->primary.swapped && !tc->secondary.swapped)
-	pitch_dt_observation(&tc->pitch, 0.0);
+        pitch_dt_observation(&tc->pitch, 0.0);
     else {
-	double dx;
-
-	dx = 1.0 / tc->def->resolution / 4;
-	if (!tc->forwards)
-	    dx = -dx;
-	pitch_dt_observation(&tc->pitch, dx);
+        double dx;
+        
+        dx = 1.0 / tc->def->resolution / 4;
+        if (!tc->forwards)
+            dx = -dx;
+        pitch_dt_observation(&tc->pitch, dx);
     }
-
+    
     /* If we have crossed the primary channel in the right polarity,
      * it's time to read off a timecode 0 or 1 value */
-
+    
     if (tc->secondary.swapped &&
-       tc->primary.positive == ((tc->def->flags & SWITCH_POLARITY) == 0))
+        tc->primary.positive == ((tc->def->flags & SWITCH_POLARITY) == 0))
     {
-	process_bitstream(tc, m);
+        process_bitstream(tc, m);
     }
-
+    
     tc->timecode_ticker++;
 }
 
@@ -538,17 +536,17 @@ static void process_sample(struct timecoder *tc,
 static struct timecode_def* next_definition(struct timecode_def *def)
 {
     if(def != NULL){
-
-    do {
-        def++;
-
-        if (def > timecodes + ARRAY_SIZE(timecodes))
-            def = timecodes;
-
-    } while (!def->lookup);
+        
+        do {
+            def++;
+            
+            if (def > timecodes + ARRAY_SIZE(timecodes))
+                def = timecodes;
+            
+        } while (!def->lookup);
         
     }
-
+    
     return def;
 }
 
@@ -570,8 +568,8 @@ void timecoder_cycle_definition(struct timecoder *tc)
 void timecoder_submit(struct timecoder *tc, signed short *pcm, size_t npcm)
 {
     while (npcm--) {
-	signed int primary, secondary;
-
+        signed int primary, secondary;
+        
         if (tc->def->flags & SWITCH_PRIMARY) {
             primary = pcm[0];
             secondary = pcm[1];
@@ -579,9 +577,9 @@ void timecoder_submit(struct timecoder *tc, signed short *pcm, size_t npcm)
             primary = pcm[1];
             secondary = pcm[0];
         }
-
-	process_sample(tc, primary, secondary);
-
+        
+        process_sample(tc, primary, secondary);
+        
         //update_monitor(tc, pcm[0], pcm[1]);
         pcm += TIMECODER_CHANNELS;
     }
@@ -602,16 +600,16 @@ void timecoder_submit(struct timecoder *tc, signed short *pcm, size_t npcm)
 signed int timecoder_get_position(struct timecoder *tc, double *when)
 {
     signed int r;
-
+    
     if (tc->valid_counter > VALID_BITS) {
         r = lut_lookup(&tc->def->lut, tc->bitstream);
-
+        
         if (r >= 0) {
             if (when)
                 *when = tc->timecode_ticker * tc->dt;
             return r;
         }
     }
-
+    
     return -1;
 }

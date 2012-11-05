@@ -13,7 +13,7 @@ ofxXwax::ofxXwax()
 
 ofxXwax::~ofxXwax() {
 	timecoder_clear(&timecoder); // class
-	timecoder_free_lookup(); // static
+	//timecoder_free_lookup(); // static
 }
 
 void ofxXwax::setup(unsigned int sampleRate, unsigned int bufferSize, string format) {
