@@ -21,23 +21,27 @@ void ofxXwax::setup(unsigned int sampleRate, unsigned int bufferSize, string for
 	this->bufferSize = bufferSize;
 	this->format = format;
 	
+    cout<<bufferSize<<endl;
 	float speed = 1.0; // 1.0 is 33 1/3, 1.35 is 45 rpm
-	timecoder_init(&timecoder, format.c_str(), speed, sampleRate);
+    struct timecode_def *timecoderDef;
+    timecoderDef = timecoder_find_definition("serato_cd");
+	timecoder_init(&timecoder, timecoderDef, speed, sampleRate);
+    //timecoder_init(&timecoder, <#struct timecode_def *def#>, speed, sampleRate);
 	
 	shortBuffer.resize(nChannels * bufferSize);
 }
 
 void ofxXwax::update(float* input) {
 	// convert from -1 to 1 to a 16-byte signed short integer
-	for (int i = 0; i < bufferSize * nChannels; i++) {
+	for (int i = 0; i < bufferSize*nChannels; i++) {
 		shortBuffer[i] = input[i] * (1<<15);
 	}
 	
 	timecoder_submit(&timecoder, &shortBuffer[0], bufferSize*nChannels);
 	
-	float when;
+	double when;
 	float curPosition = timecoder_get_position(&timecoder, &when);
-	
+	cout<<curPosition<<endl;
 	pitch = timecoder_get_pitch(&timecoder);
 	velocity = (msPerSecond * bufferSize / sampleRate) * pitch;
 	relativePosition += velocity;
