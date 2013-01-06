@@ -30,14 +30,7 @@ void ofxXwax::setup(unsigned int sampleRate, unsigned int bufferSize, string for
 	shortBuffer.resize(nChannels * bufferSize);
 }
 
-
-//
-//returns a vector of floats
-//      curPosition, pitch, velocity, relativePosition
-//
-
-vector<float> ofxXwax::update(float* input) {
-    vector<float> updates;
+void ofxXwax::update(float* input) {
 	// convert from -1 to 1 to a 16-byte signed short integer
 	for (int i = 0; i < bufferSize*nChannels; i++) {
 		shortBuffer[i] = input[i] * (1<<15);
@@ -51,12 +44,6 @@ vector<float> ofxXwax::update(float* input) {
 	velocity = (msPerSecond * bufferSize / sampleRate) * pitch;
 	relativePosition += velocity;
 
-    updates.push_back(curPosition);
-    updates.push_back(relativePosition);
-    updates.push_back(pitch);
-    updates.push_back(velocity);
-   
-    
 	if(curPosition == invalidPosition) {
 		absoluteValid = false;
 		absolutePosition += velocity;
@@ -64,9 +51,26 @@ vector<float> ofxXwax::update(float* input) {
 		absoluteValid = true;
 		absolutePosition = curPosition;
 	}
-    
-    return updates;
-    
+}
+
+string ofxXwax::getFormat() const {
+	return format;
+}
+
+float ofxXwax::getPitch() const {
+	return pitch;
+}
+
+float ofxXwax::getVelocity() const {
+	return velocity;
+}
+
+float ofxXwax::getRelative() const {
+	return relativePosition;
+}
+
+float ofxXwax::getAbsolute() const {
+	return absolutePosition;
 }
 
 bool ofxXwax::isAbsoluteValid() const {

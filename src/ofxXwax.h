@@ -26,10 +26,22 @@ public:
 	
 	// *input is an interlaced 2-channel audio stream, which means it points to
 	// an array that contains (bufferSize * 2) elements.
-	vector<float> update(float* input);
+	void update(float* input);
 	
 	// if you need to check what the format is for display purposes
 	string getFormat() const;
+	
+	// when the record is playing forward, the pitch is +1.0
+	float getPitch() const;
+	
+	// velocity is the derivative of position, milliseconds since last update
+	float getVelocity() const;
+	
+	// relative position does not change when you move the needle across the vinyl
+	float getRelative() const;
+	
+	// absolute position knows where on the record you are, avoids sticker drift
+	float getAbsolute() const;
 	
 	// absolute position can not always be read. check to see if it's valid
 	bool isAbsoluteValid() const;
