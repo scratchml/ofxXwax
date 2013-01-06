@@ -52,7 +52,7 @@ public:
 	static float millisToDegrees(float millis);
 	
 protected:
-	struct timecoder_t timecoder;
+	struct timecoder timecoder;
 	unsigned int sampleRate, bufferSize;
 	vector<short> shortBuffer;
 	float pitch, velocity, relativePosition, absolutePosition;
